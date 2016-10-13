@@ -13,11 +13,17 @@ for row in df.iterrows():
         if row.FTHG > row.FTAG:
 
                 team_wins[row.HomeTeam].append(1)
-       
-        if row.FTAG >= row.FTAG:
-       
-                team_wins[row.AwayTeam].append(0)
+       		team_wins[row.AwayTeam].append(-1)
 
+        if row.FTAG > row.FTHG:
+       
+                team_wins[row.AwayTeam].append(-1)
+		team_wins[row.HomeTeam].append(1)
+
+	if row.FTHG == row.FTAG:
+
+		team_wins[row.AwayTeam].append(0)
+		team_wins[row.HomeTeam].append(0)
 
 with open('teams.csv', 'w') as f:                   
 	for team in team_wins:
