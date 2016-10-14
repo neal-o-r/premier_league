@@ -47,7 +47,7 @@ def select_frame():
                 sel.loc[mask, 'Alpha']   = 0.8
                 sel.loc[mask, 'Width']   = 4
                 sel.loc[~mask, 'Colour'] = 'grey'
-                sel.loc[~mask, 'Alpha']  = 0.2
+                sel.loc[~mask, 'Alpha']  = 0.3
                 sel.loc[~mask, 'Width']  = 1
         return sel
 
@@ -62,6 +62,8 @@ def update():
 
                 p.title.text = "%s have won %.2f%% of their Premier League Matches" %(selected_team[0], df_plot.PC[df_plot.Team == selected_team[0]])
 
+        else:
+                p.title.text = ""
 
         source.data = dict(
                 x = list(df_plot.Record.apply(len).apply(range)),

@@ -17,8 +17,8 @@ for row in df.iterrows():
 
         if row.FTAG > row.FTHG:
        
-                team_wins[row.AwayTeam].append(-1)
-		team_wins[row.HomeTeam].append(1)
+                team_wins[row.AwayTeam].append(1)
+		team_wins[row.HomeTeam].append(-1)
 
 	if row.FTHG == row.FTAG:
 
