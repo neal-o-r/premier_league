@@ -23,6 +23,7 @@ search = TextInput(title="Search for a team")
 
 source = ColumnDataSource(data=dict(x=[], y=[], team=[], pc=[], colour=[], width=[], alpha=[]))
 
+
 p = figure(plot_height=800, plot_width=1000, title="")
 
 p.multi_line(
@@ -32,6 +33,8 @@ p.multi_line(
         color = 'colour',
         alpha = 'alpha', source=source
 )
+
+
 p.yaxis.axis_label = "Cumulative Matches Won"
 p.xaxis.axis_label = "Number of Games Played"
 
