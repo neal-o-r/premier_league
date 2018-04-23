@@ -14,7 +14,7 @@ df['Record'] = [map(int, df.Record[i].split(',')) for i in range(len(df))]
 df['Width']  = 2
 df['Colour'] = "blue"
 df['Alpha']  = [0.8] * len(df)
-df['PC'] = 100 * (df.Record.apply(sum) / df.Record.apply(len)) 
+df['PC'] = 100 * (df.Record.apply(sum) / df.Record.apply(len))
 
 
 desc = Div(text=open("description.html", 'r').read(), width=800)
@@ -56,11 +56,11 @@ def select_frame():
 
 
 def update():
-        
+
         df_plot = select_frame()
 
         selected_team = (df_plot.Team[df_plot.Colour == 'red'].values)
-        
+
         if len(selected_team) != 0:
 
                 p.title.text = "%s have won %.2f%% of their Premier League Matches" %(selected_team[0], df_plot.PC[df_plot.Team == selected_team[0]])
